@@ -43,6 +43,7 @@ After the list narrows down, you'll be asked `New word:`. Type whichever word fr
 ## Important notes
 
 - **There is no auto-correct.** If you mistype a color or give wrong feedback, the solver will filter based on that mistake and may eliminate the actual answer. It won't stop you or warn you.
+- **Repeating letters:** there is a known issue with words that have repeating letters — I'm still working on fixing it. That said, the algorithm should work for roughly 80–90% of games.
 - Input must match the expected words (`grey`/`gray`, `green`, `yellow`) and exactly 5 space-separated values, or the program will behave unexpectedly.
 - You choose the next word yourself — the solver narrows the list but does not automatically suggest subsequent guesses after the first random one.
 

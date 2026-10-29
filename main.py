@@ -6,10 +6,11 @@ excluded_letters = []
 correct_letters = {}
 misplaced_letters = {}
 word_list = open("dict.txt", "r")
-new_word_list = open("possible_vars.txt", "r")
 word_list_content = (word_list.read()).split()
 WORD_LENGTH = 5
 repeat_check = True
+
+print("Disclaimer: there's a known issue with words containing repeating letters — still working on fixing it, but the algo should work for about 80–90% of games.")
 
 def get_key_by_value(my_dict, target_value):
     return next((k for k, v in my_dict.items() if v == target_value), None)
@@ -19,10 +20,10 @@ def repeat_letters_check():
    compiled_list.append(list(correct_letters.keys()))
    compiled_list.append(list(misplaced_letters.keys()))
    flattened_compiled_list = [item for container in compiled_list for item in container]
-   # print(excluded_letters)
    for item in flattened_compiled_list:
       if item in excluded_letters:
          excluded_letters.remove(item)
+   print(excluded_letters)
    first_filter()
 
 def first_filter():
@@ -100,7 +101,8 @@ def repeat_user_input():
 def first_random_try():
    global first_random_word
    first_random_word = word_list_content[math.floor(random.random() * len(word_list_content))]
-   print(first_random_word)
+   # first_random_word = "scarf" //use this if you already started the wordle game. uncomment it and comment the first_random_word above. 
+   print("\nPut this in wordle:",first_random_word)
    wait_user_input()
 
 first_random_try()
